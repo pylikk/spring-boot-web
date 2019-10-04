@@ -1,0 +1,6 @@
+net\guides\springboot2\springboot2webappthymeleaf\domain\User.class
+net\guides\springboot2\springboot2webappthymeleaf\service\UserService.class
+net\guides\springboot2\springboot2webappthymeleaf\Springboot2WebappThymeleafApplication.class
+net\guides\springboot2\springboot2webappthymeleaf\repositories\UserRepository.class
+net\guides\springboot2\springboot2webappthymeleaf\service\UserServiceImpl.class
+net\guides\springboot2\springboot2webappthymeleaf\controllers\HomeController.class
