@@ -1,4 +1,4 @@
-package com.example.demo.model;
+package net.guides.springboot2.springboot2webappthymeleaf.domain;
 
 import lombok.*;
 

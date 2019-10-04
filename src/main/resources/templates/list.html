@@ -1,33 +1,55 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="utf-8"/>
-    <title>Home</title>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <title>Edit Product Details</title>
+    <th:block th:include="layout/header"></th:block>
 </head>
+<!--<body>-->
+<!--<h2 th:text="#{app.title}">App Title</h2>-->
+<!--<table>-->
+<!--    <thead>-->
+<!--    <tr>-->
+<!--        <th>Id</th>-->
+<!--        <th>Name</th>-->
+<!--        <th>Address</th>-->
+
+<!--    </tr>-->
+<!--    </thead>-->
+<!--    <tbody>-->
+<!--    <tr th:each="user : ${users}">-->
+<!--        <td th:text="${user.id}">Id</td>-->
+<!--        <td th:text="${user.name}">Name</td>-->
+<!--        <td th:text="${user.address}">Address</td>-->
+<!--    </tr>-->
+
+<!--    </tbody>-->
+<!--    <tbody>-->
+<!--    <td><input type="button" value="addUser"-->
+<!--               onclick="window.location.href='/savePage/'; return false" class="save" /></td>-->
+<!--    </tbody>-->
+<!--</table>-->
+<!--</body>-->
 <body>
-<h2 th:text="#{app.title}">App Title</h2>
-<table>
-    <thead>
-    <tr>
-        <th>Id</th>
-        <th>Name</th>
-        <th>Address</th>
+<div class="container">
+    <div th:if="${not #lists.isEmpty(users)}">
+        <h2>All Users</h2>
+        <table class="table table-striped">
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Address</th>
+            </tr>
+            <tr th:each="user : ${users}">
+                <td th:text="${user.id}">Id</td>
+                <td th:text="${user.name}">Name</td>
+                <td th:text="${user.address}">Description</td>
 
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="user : ${users}">
-        <td th:text="${user.id}">Id</td>
-        <td th:text="${user.name}">Name</td>
-        <td th:text="${user.address}">Address</td>
-    </tr>
-
-    </tbody>
-    <tbody>
-    <td><input type="button" value="addUser"
-               onclick="window.location.href='/savePage/'; return false" class="save" /></td>
-    </tbody>
-</table>
+                <td><a th:href="${'/products/edit/' + user.id}" class="btn btn-default">Edit</a></td>
+                <td><a th:href="${'/products/delete/' + user.id}" class="btn btn-danger">Delete</a></td>
+            </tr>
+        </table>
+    </div>
+</div>
 </body>
 </html>
+
